@@ -3,27 +3,11 @@ const charsArray = chars.split("")
 let passwordLength = 0;
 
 const input = document.querySelector("input");
+const generateButton = document.querySelector(".generate-button")
 const searchBar = document.querySelector(".searchbar");
 const message = document.querySelector(".message");
 const password = document.querySelector("#password");
-
-input.addEventListener("change", () =>{
-    passwordLength = Number(input.value);
-    if (isNaN(passwordLength)){
-        message.removeAttribute("class");
-        message.classList.add("error");
-        message.textContent = "Please introduce a number";
-    } else if(passwordLength < 8 || passwordLength > 15){
-        message.removeAttribute("class");
-        message.classList.add("error");
-        message.textContent = "Please introduce desired number of characters"
-    } else {
-    message.removeAttribute("class");
-    message.classList.add("generating");
-    message.textContent = "Generating...";
-    generatePassword(passwordLength);
-    }
-})
+const copyButton = document.querySelector("#copy");
 
 function generatePassword(passwordLength){
     let generatedPassword = "";
@@ -39,3 +23,27 @@ function generatePassword(passwordLength){
     }
     password.textContent = generatedPassword
 }
+
+function checkLength (){
+    passwordLength = Number(input.value);
+    console.log(passwordLength)
+    if (isNaN(passwordLength)){
+        message.textContent = "Please introduce a number";
+    } else if(passwordLength < 8){
+        message.textContent = "Between 8 and 15"
+    } else {
+    message.textContent = "Generating...";
+    }
+}
+generateButton.addEventListener("click", checkLength)
+input.addEventListener("keypress", (e) => {
+    console.log(e)
+    if(e.key === "Enter"){
+        checkLength();
+    }
+})
+
+copyButton.addEventListener("click", () => {
+    let copyText = password.textContent
+    navigator.clipboard.writeText(copyText);
+})
