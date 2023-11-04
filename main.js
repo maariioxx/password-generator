@@ -33,6 +33,7 @@ function checkLength (){
         message.textContent = "Between 8 and 15"
     } else {
     message.textContent = "Generating...";
+    generatePassword(passwordLength);
     }
 }
 generateButton.addEventListener("click", checkLength)
