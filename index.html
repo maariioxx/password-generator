@@ -5,9 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <script src="main.js" defer></script>
 </head>
 <body>
-    
+    <header>PASSWORD GENERATOR</header>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="How many characters? Between 8 and 15">
+            <span class="material-icons">arrow_forward_ios</span>
+            <p>We use letters, numbers and special characters to make it extra-safe</p>
+            <p class="message"></p>
+        </div>
+        <div class="output">
+            <p id="password"></p>
+            <button class="copy">COPY</button>
+        </div>
+    </div>
 </body>
 </html>
