@@ -1,7 +1,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@200&display=swap');
 
+html {
+    font-size: 62.5%;
+}
 body{
     background-color: #191919;
     color: whitesmoke;
     font-family: "Poppins", sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+header {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 70px 0 90px;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, rgb(25, 25, 25) 0%, rgb(121, 9, 121) 100%) 1;
+    box-shadow: 2px 0px 15px black;
+    width: 520px;
+    height: 400px;
+    flex-wrap: wrap;
+}
+
+.search-bar{
+    position: relative;
+    margin: 50px 0 80px;
+}
+
+input {
+    width: 370px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 5px;
+    
+}
+.generate-button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+}
+
+.material-icons{
+    position: absolute;
+    right: 5px;
+    top: 16px;
+    color: black
+}
+
+.info {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.message {
+    font-size: 1.7rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.output {
+    display: flex;
+    width: 70%;
+    justify-content: flex-start;
+    gap: 50px;
+    position: relative;
+
+}
+
+#password {
+    font-size: 2rem;
+    font-weight: bold;
+    overflow: hidden;
+    max-width: 200px;
+}
+
+#copy {
+    background-color: #191919;
+    outline: none;
+    border: none;
+    position: absolute;
+    right: 0;
+    width: 102px;
+    height: 64px;
+    color: white;
+    box-shadow: 1px 1px 5px black;   
+    cursor: pointer;    
+}
+
+#copy:hover{
+    transform: scale(1.1); 
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%) 1;
 }
