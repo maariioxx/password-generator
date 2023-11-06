@@ -1,30 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@200&display=swap');
 
+:root.dark{
+    --bg-color: #191919;
+    --color-text: whitesmoke;
+    --box-shadow-color: black;
+}
+
+:root.light{
+    --bg-color: white;
+    --color-text: black;
+    --box-shadow-color: lightgray;
+}
+
 html {
     font-size: 62.5%;
 }
+
 body{
-    background-color: #191919;
-    color: whitesmoke;
+    background-color: var(--bg-color);
+    color: var(--color-text);
     font-family: "Poppins", sans-serif;
     height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
 }
 
+.toggle-theme {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    left: 100px;
+    top: 90px;
+
+}
 header {
     font-size: 5rem;
     font-weight: bold;
     text-align: center;
     margin: 70px 0 90px;
 }
+
 main{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -32,8 +58,8 @@ main{
     padding: 20px;
     border-width: 4px;
     border-style: solid;
-    border-image: linear-gradient(to bottom, rgb(25, 25, 25) 0%, rgb(121, 9, 121) 100%) 1;
-    box-shadow: 2px 0px 15px black;
+    border-image: linear-gradient(to bottom, var(--bg-color) 0%, rgb(121, 9, 121) 100%) 1;
+    box-shadow: 2px 0px 15px var(--box-shadow-color);
     width: 520px;
     height: 400px;
     flex-wrap: wrap;
@@ -50,15 +76,15 @@ input {
     font-size: 1.5rem;
     font-weight: 500;
     border-radius: 5px;
-    
 }
+
 .generate-button{
     cursor: pointer;
     background-color: transparent;
     border: 0;
 }
 
-.material-icons{
+.generate-button{
     position: absolute;
     right: 5px;
     top: 16px;
@@ -93,15 +119,15 @@ input {
 }
 
 #copy {
-    background-color: #191919;
+    background-color: var(--bg-color);
     outline: none;
     border: none;
     position: absolute;
     right: 0;
     width: 102px;
     height: 64px;
-    color: white;
-    box-shadow: 1px 1px 5px black;   
+    color: var(--color-text);
+    box-shadow: 1px 1px 5px var(--box-shadow-color);   
     cursor: pointer;    
 }
 
