@@ -9,6 +9,26 @@ const message = document.querySelector(".message");
 const password = document.querySelector("#password");
 const copyButton = document.querySelector("#copy");
 
+function setTheme() {
+    const root = document.documentElement;
+    const newTheme = root.className === "dark" ? "light" : "dark";
+    root.className = newTheme;
+}
+
+const toggleButton = document.querySelector(".toggle-theme")
+
+toggleButton.addEventListener("click", () => {
+    setTheme();
+    if(toggleButton.textContent === "light_mode"){
+        toggleButton.textContent = "dark_mode";
+        toggleButton.style.color = "white";
+    } else {
+        toggleButton.textContent = "light_mode";
+        toggleButton.style.color = "black";
+    }
+    
+})
+
 function generatePassword(passwordLength){
     let generatedPassword = "";
     let char = "";
